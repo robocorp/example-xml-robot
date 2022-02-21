@@ -17,6 +17,7 @@ Some of the things you can do include:
 - Remove element attributes from XML by XPath
 - Set XML element attribute value
 - Add attribute to XML element by XPath
+- Transform XML using XSLT
 
 See the [XML library documentation](https://robocorp.com/docs/libraries/built-in/xml) for more examples and a complete list of keywords.
 
