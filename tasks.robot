@@ -1,6 +1,7 @@
 *** Settings ***
 Documentation     Robot Framework XML examples.
 Library           XML    use_lxml=True
+Library           XmlTransformer.py
 
 *** Variables ***
 ${XML_FILE_PATH}=    ${CURDIR}${/}robots.xml
@@ -96,6 +97,12 @@ Add attribute to XML element by XPath
     ...    my-attribute
     ...    //robot[1]
     Log    ${attribute}    # my-value
+
+Transform XML using XSLT
+    Transform Xml
+    ...    ${XML_FILE_PATH}
+    ...    ${CURDIR}${/}transform-to-humans.xsl
+    ...    ${OUTPUT_DIR}${/}humans.xml
 
 *** Keywords ***
 Parse test XML
