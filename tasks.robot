@@ -1,10 +1,13 @@
 *** Settings ***
-Documentation     Robot Framework XML examples.
-Library           XML    use_lxml=True
-Library           XmlTransformer.py
+Documentation       Robot Framework XML examples.
+
+Library             XML    use_lxml=True
+Library             XmlTransformer.py
+
 
 *** Variables ***
-${XML_FILE_PATH}=    ${CURDIR}${/}robots.xml
+${XML_FILE_PATH}=       ${CURDIR}${/}robots.xml
+
 
 *** Tasks ***
 Parse an XML file
@@ -104,7 +107,8 @@ Transform XML using XSLT
     ...    ${CURDIR}${/}transform-to-humans.xsl
     ...    ${OUTPUT_DIR}${/}humans.xml
 
+
 *** Keywords ***
 Parse test XML
     ${xml}=    Parse Xml    ${XML_FILE_PATH}
-    [Return]    ${xml}
+    RETURN    ${xml}
